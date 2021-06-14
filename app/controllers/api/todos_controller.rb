@@ -1,11 +1,11 @@
-class TodosController < ApplicationController
+class Api::TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy]
 
   # GET /todos
   def index
     @todos = Todo.all
 
-    render json: @todos, only:[:title]
+    render json: @todos, only: [:id, :title]
   end
 
   # GET /todos/1
@@ -18,7 +18,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      render json: @todo, status: :created, location: @todo
+      render json: @todo, status: :created, location: api_todo_url(@todo)
     else
       render json: @todo.errors, status: :unprocessable_entity
     end
