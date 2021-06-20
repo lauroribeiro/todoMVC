@@ -5,7 +5,7 @@ class Api::TodosController < ApplicationController
   def index
     @todos = Todo.all
 
-    render json: @todos, only: [:id, :title]
+    render json: @todos, only: [:id, :title, :completed]
   end
 
   # GET /todos/1
@@ -46,6 +46,6 @@ class Api::TodosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_params
-      params.require(:todo).permit(:title)
+      params.require(:todo).permit(:title, :completed)
     end
 end
