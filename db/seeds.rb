@@ -8,14 +8,11 @@
 
 todos = Todo.create([{
     title: "Ir à padaria",
-    completed: false
   },
   {
     title: "Consertar a geladeira",
-    completed: false
   },
   {
     title: "Ir à academia",
-    completed: false
   }
 ])
