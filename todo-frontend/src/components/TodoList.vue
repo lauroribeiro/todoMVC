@@ -24,9 +24,9 @@
 					<strong v-text="remaining"></strong> {{pluralize('item', remaining)}} left
 				</span>
 				<ul class="filters">
-					<li><a href="#/all" :class="{selected: filter == 'all'}"  @click="filter = 'all'">All</a></li>
-					<li><a href="#/active" :class="{selected: filter == 'active'}" @click="filter = 'active'">Active</a></li>
-					<li><a href="#/completed" :class="{selected: filter == 'completed'}" @click="filter = 'completed'">Completed</a></li>
+					<li><a :class="{selected: filter == 'all'}"  @click="filter = 'all'">All</a></li>
+					<li><a :class="{selected: filter == 'active'}" @click="filter = 'active'">Active</a></li>
+					<li><a :class="{selected: filter == 'completed'}" @click="filter = 'completed'">Completed</a></li>
 				</ul>
 				<button class="clear-completed" @click="deleteCompleted" v-show="todos.length > remaining">
 					Clear completed
