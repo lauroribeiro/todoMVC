@@ -90,8 +90,7 @@
         }
         api.post('/todos', {
           title: this.newTodo
-        }).then(response => console.log(response))
-          .catch(error => console.log(error));
+        }).catch(error => console.log(error));
         this.newTodo = '';
         this.getTodos();
       },
@@ -122,7 +121,6 @@
       },
       deleteTodo: function(todo, index){
         api.delete(`/todos/${todo.id}`)
-          .then(response => console.log(response))
           .catch(error => console.log(error));
         this.todos.splice(index, 1);        
       },
